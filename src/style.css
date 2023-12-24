@@ -9,5 +9,6 @@
 .hello {
   color: red;
   font-family: 'MyFont';
+  font-size: 5rem;
   background: url('./icon.png');
 }
