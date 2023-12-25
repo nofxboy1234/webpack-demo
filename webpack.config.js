@@ -1,5 +1,5 @@
 const path = require('path');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -8,18 +8,18 @@ module.exports = {
     index: './src/index.js',
     print: './src/print.js',
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Output Management',
+      // filename: 'index.html',
+      // inject: 'head',
+      // scriptLoading: 'defer',
+      // template: './src/template.html',
+    }),
+  ],
   output: {
     // filename: 'bundle.js',
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
-  plugins: [
-    // new HtmlWebpackPlugin({
-    //   // title: 'Webpack 5 Video Tutorials',
-    //   // filename: 'index.html',
-    //   // inject: 'head',
-    //   // scriptLoading: 'defer',
-    //   template: './src/template.html',
-    // }),
-  ],
 };
